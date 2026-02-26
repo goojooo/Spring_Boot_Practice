@@ -32,5 +32,16 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
         }
        return list;
     }
+
+	@Override
+	public int registerEmployee(Employee emp) throws Exception {
+		// TODO Auto-generated method stub
+		return empDAO.insertEmployee(emp);
+	}
+
+	@Override
+	public int removeEmployeeByNo(int eno) throws Exception {
+	    return empDAO.deleteEmployeeByNo(eno);
+	}
 }
 
