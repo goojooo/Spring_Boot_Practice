@@ -19,7 +19,7 @@ import com.nt.model.Hospital;
 @Repository
 public class HospitalDaoImpl implements IHospitalDAO{
 	
-	  private static final String GET_HOS_BY_LOC="SELECT HNO,HNAME,TYPE,speciality FROM HOSPITAL WHERE LOCATION IN(?,?,?) ORDER BY LOCATION";
+	  private static final String GET_HOS_BY_LOC="SELECT HNO,HNAME,TYPE,speciality, LOCATION FROM HOSPITAL WHERE LOCATION IN(?,?,?) ORDER BY HNO";
 	    
 
 	  @Autowired
@@ -48,6 +48,7 @@ public class HospitalDaoImpl implements IHospitalDAO{
 	                        hos.setNnmae(rs.getString(2));
 	                        hos.setType(rs.getString(3));
 	                        hos.setSpeciality(rs.getString(4));
+	                        hos.setLocation(rs.getString(5));
 	                        list.add(hos);//adding emp obj into list collection
 	                    }//while
 	                }//try2
