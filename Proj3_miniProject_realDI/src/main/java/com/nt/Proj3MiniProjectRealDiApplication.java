@@ -74,6 +74,7 @@ public class Proj3MiniProjectRealDiApplication {
 
 			else {
 				System.out.println("Invalid Choice");
+				System.out.println("Please enter valid choice...");
 			}
 
 		} catch (Exception e) {
