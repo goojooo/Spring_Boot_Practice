@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Student Management System</h1>
+
+<div class="form-box">
+<div class="search-box">
+<input id="searchInput" placeholder="Search student..." onkeyup="searchStudents()">
+</div>
+<input id="name" placeholder="Enter Name">
+<input id="email" placeholder="Enter Email">
+<input id="course" placeholder="Enter Course">
+
+<button id="addBtn" onclick="saveStudent()">Add Student</button>
+<button onclick="clearForm()">Clear</button>
+
+</div>
+
+<h2>Student List</h2>
+
+<table>
+
+<thead>
+<tr>
+<th onclick="sortTable(0)">ID</th>
+<th onclick="sortTable(1)">Name</th>
+<th onclick="sortTable(2)">Email</th>
+<th onclick="sortTable(3)">Course</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="studentTable"></tbody>
+
+</table>
+<div class="pagination">
+<button onclick="prevPage()">Previous</button>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

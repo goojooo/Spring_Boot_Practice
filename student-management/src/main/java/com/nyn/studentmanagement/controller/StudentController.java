@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.nyn.studentmanagement.entity.Student;
 import com.nyn.studentmanagement.service.StudentService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/students")
 public class StudentController {
