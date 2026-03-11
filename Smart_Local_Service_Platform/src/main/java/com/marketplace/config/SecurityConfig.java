@@ -23,14 +23,17 @@ public class SecurityConfig {
 
                 .requestMatchers("/api/auth/**").permitAll()
 
-                .requestMatchers(HttpMethod.POST, "/api/categories")
-                .hasRole("ADMIN")
+                // categories
+                .requestMatchers(HttpMethod.POST, "/api/categories").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/api/categories").authenticated()
 
-                .requestMatchers(HttpMethod.GET, "/api/categories")
-                .authenticated()
-
-                .requestMatchers("/api/customer/**").hasRole("CUSTOMER")
+                // provider profile
                 .requestMatchers("/api/provider/**").hasRole("PROVIDER")
+
+                // services
+                .requestMatchers(HttpMethod.POST, "/api/services").hasRole("PROVIDER")
+                .requestMatchers(HttpMethod.GET, "/api/services").authenticated()
+
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
                 .anyRequest().authenticated()
