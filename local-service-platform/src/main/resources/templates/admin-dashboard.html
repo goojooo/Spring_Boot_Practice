@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+</head>
+
+<body>
+
+<h2>Pending Service Partner Requests</h2>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Service</th>
+<th>Action</th>
+</tr>
+
+<tr th:each="req : ${requests}">
+<td th:text="${req.name}"></td>
+<td th:text="${req.email}"></td>
+<td th:text="${req.serviceType}"></td>
+
+<td>
+<a th:href="@{/admin/approve/{id}(id=${req.id})}">Approve</a>
+<a th:href="@{/admin/reject/{id}(id=${req.id})}">Reject</a>
+</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
