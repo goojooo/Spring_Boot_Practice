@@ -33,6 +33,17 @@ public class SecurityConfig {
                 // services
                 .requestMatchers(HttpMethod.POST, "/api/services").hasRole("PROVIDER")
                 .requestMatchers(HttpMethod.GET, "/api/services").authenticated()
+                
+                .requestMatchers(HttpMethod.POST, "/api/bookings").hasRole("CUSTOMER")
+                .requestMatchers(HttpMethod.GET, "/api/bookings").authenticated()
+                
+                .requestMatchers(HttpMethod.POST, "/api/bookings").hasRole("CUSTOMER")
+
+                .requestMatchers(HttpMethod.POST, "/api/bookings/*/accept")
+                .hasRole("PROVIDER")
+
+                .requestMatchers(HttpMethod.POST, "/api/bookings/*/complete")
+                .hasRole("PROVIDER")
 
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
