@@ -1,0 +1,17 @@
+<div class="container">
+
+<div class="card">
+
+<h2 th:text="${provider.name}"></h2>
+
+<p>Service: <span th:text="${provider.serviceType}"></span></p>
+
+<p>Experience: <span th:text="${provider.experience}"></span></p>
+
+<a th:href="@{/booking/{id}(id=${provider.id})}" class="btn">
+Book Service
+</a>
+
+</div>
+
+</div>

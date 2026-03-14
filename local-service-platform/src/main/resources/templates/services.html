@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Services</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<h1>Available Service Providers</h1>
+
+<div class="card-grid">
+
+<div class="card" th:each="service : ${services}">
+
+<h3 th:text="${service.serviceType}"></h3>
+
+<p>
+Provider:
+<span th:text="${service.name}"></span>
+</p>
+
+<p>
+Experience:
+<span th:text="${service.experience}"></span> years
+</p>
+
+<a th:href="@{/provider/{id}(id=${service.id})}" class="btn">
+View Profile
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

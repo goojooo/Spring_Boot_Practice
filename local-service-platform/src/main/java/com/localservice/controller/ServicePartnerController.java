@@ -12,20 +12,31 @@ import org.springframework.web.bind.annotation.*;
 public class ServicePartnerController {
 
     @Autowired
-    private ServicePartnerService partnerService;
+    private ServicePartnerService servicePartnerService;
 
+    // Show partner registration form
     @GetMapping("/register")
-    public String registerForm(Model model){
+    public String registerForm(Model model) {
 
         model.addAttribute("partner", new ServicePartnerRequest());
+
         return "partner-register";
     }
 
-    @PostMapping("/register")
-    public String submitRequest(@ModelAttribute ServicePartnerRequest request){
+    // Waiting page after submitting request
+    @GetMapping("/waiting")
+    public String waitingPage() {
 
-        partnerService.submitRequest(request);
-
-        return "request-submitted";
+        return "waiting";
     }
+
+    // Submit partner request
+    @PostMapping("/register")
+    public String registerPartner(@ModelAttribute ServicePartnerRequest request) {
+
+        servicePartnerService.submitRequest(request);
+
+        return "redirect:/partner/waiting";
+    }
+
 }

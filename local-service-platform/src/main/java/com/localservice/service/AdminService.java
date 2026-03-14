@@ -19,21 +19,21 @@ public class AdminService {
 
     public void approvePartner(Long id){
 
-        ServicePartnerRequest request =
-                requestRepo.findById(id).orElseThrow();
+    	ServicePartnerRequest req = requestRepo.findById(id).orElseThrow();
 
-        ServicePartner partner = new ServicePartner();
+    	ServicePartner partner = new ServicePartner();
 
-        partner.setName(request.getName());
-        partner.setEmail(request.getEmail());
-        partner.setPhone(request.getPhone());
-        partner.setServiceType(request.getServiceType());
-        partner.setExperience(request.getExperience());
+    	partner.setName(req.getName());
+    	partner.setEmail(req.getEmail());
+    	partner.setPhone(req.getPhone());
+    	partner.setServiceType(req.getServiceType());
+    	partner.setExperience(req.getExperience());
 
-        partnerRepo.save(partner);
+    	partnerRepo.save(partner);
 
-        requestRepo.deleteById(id);
-    }
+    	requestRepo.deleteById(id);
+
+    	}
 
     public void rejectPartner(Long id){
 

@@ -26,6 +26,11 @@ public class UserController {
 
         userService.registerUser(user);
 
+        return "redirect:/login";
+
+    }
+    @GetMapping("/dashboard")
+    public String dashboard() {
         return "user-dashboard";
     }
 }
