@@ -1,0 +1,13 @@
+<form action="/booking/create" method="post">
+
+<input type="hidden" name="partnerId" th:value="${booking.partnerId}">
+
+<label>Your Name</label>
+<input type="text" name="customerName">
+
+<label>Date</label>
+<input type="date" name="bookingDate">
+
+<button class="btn-primary">Book Service</button>
+
+</form>

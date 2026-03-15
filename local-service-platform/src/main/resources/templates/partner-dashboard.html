@@ -1,50 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Partner Dashboard</title>
-<link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-
-<div class="container">
-
 <h2>Booking Requests</h2>
 
 <table border="1">
 
 <tr>
 <th>Customer</th>
-<th>Date</th>
 <th>Service</th>
-<th>Action</th>
+<th>Date</th>
+<th>Status</th>
 </tr>
 
 <tr th:each="booking : ${bookings}">
 
-<td th:text="${booking.userName}"></td>
-
-<td th:text="${booking.date}"></td>
-
+<td th:text="${booking.customerName}"></td>
 <td th:text="${booking.serviceType}"></td>
-
-<td>
-
-<a th:href="@{/partner/accept/{id}(id=${booking.id})}" class="btn-primary">
-Accept
-</a>
-
-<a th:href="@{/partner/reject/{id}(id=${booking.id})}" class="btn-primary">
-Reject
-</a>
-
-</td>
+<td th:text="${booking.bookingDate}"></td>
+<td th:text="${booking.status}"></td>
 
 </tr>
 
 </table>
-
-</div>
-
-</body>
-</html>

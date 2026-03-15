@@ -4,16 +4,15 @@
 
 <form action="/booking/create" method="post">
 
-<label>Date</label>
-<input type="date" name="date">
+<input type="text" name="customerName" placeholder="Your Name">
 
-<label>Time</label>
-<input type="time" name="time">
+<input type="text" name="serviceType">
 
-<label>Address</label>
-<input type="text" name="address">
+<input type="date" name="bookingDate">
 
-<button class="btn">Confirm Booking</button>
+<input type="hidden" name="partnerId" th:value="${partner.id}">
+
+<button>Book Service</button>
 
 </form>
 

@@ -9,9 +9,7 @@
 
 <h1>Available Service Providers</h1>
 
-<div class="card-grid">
-
-<div class="card" th:each="service : ${services}">
+<div th:each="service : ${services}" class="service-card">
 
 <h3 th:text="${service.serviceType}"></h3>
 
@@ -25,9 +23,11 @@ Experience:
 <span th:text="${service.experience}"></span> years
 </p>
 
-<a th:href="@{/provider/{id}(id=${service.id})}" class="btn">
-View Profile
+<a th:href="@{/booking/form/{partnerId}(partnerId=${service.id})}">
+Book Service
 </a>
+
+</div>
 
 </div>
 

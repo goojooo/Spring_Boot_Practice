@@ -19,21 +19,24 @@ public class AdminService {
 
     public void approvePartner(Long id){
 
-    	ServicePartnerRequest req = requestRepo.findById(id).orElseThrow();
+        ServicePartnerRequest request = requestRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Request not found"));
 
-    	ServicePartner partner = new ServicePartner();
+        ServicePartner partner = new ServicePartner();
 
-    	partner.setName(req.getName());
-    	partner.setEmail(req.getEmail());
-    	partner.setPhone(req.getPhone());
-    	partner.setServiceType(req.getServiceType());
-    	partner.setExperience(req.getExperience());
+        partner.setName(request.getName());
+        partner.setEmail(request.getEmail());
+        partner.setPhone(request.getPhone());
+        partner.setServiceType(request.getServiceType());
+        partner.setExperience(request.getExperience());
 
-    	partnerRepo.save(partner);
+        // temporary password for partner login
+        partner.setPassword("123456");
 
-    	requestRepo.deleteById(id);
+        partnerRepo.save(partner);
 
-    	}
+        requestRepo.deleteById(id);
+    }
 
     public void rejectPartner(Long id){
 

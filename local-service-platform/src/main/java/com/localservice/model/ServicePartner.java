@@ -15,27 +15,33 @@ public class ServicePartner {
     private String serviceType;
     private int experience;
 
-    public Long getId(){ return id; }
+    private String password;
 
-    public void setId(Long id){ this.id = id; }
+    public Long getId() { return id; }
 
-    public String getName(){ return name; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setName(String name){ this.name = name; }
+    public String getName() { return name; }
 
-    public String getEmail(){ return email; }
+    public void setName(String name) { this.name = name; }
 
-    public void setEmail(String email){ this.email = email; }
+    public String getEmail() { return email; }
 
-    public String getPhone(){ return phone; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setPhone(String phone){ this.phone = phone; }
+    public String getPhone() { return phone; }
 
-    public String getServiceType(){ return serviceType; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public void setServiceType(String serviceType){ this.serviceType = serviceType; }
+    public String getServiceType() { return serviceType; }
 
-    public int getExperience(){ return experience; }
+    public void setServiceType(String serviceType) { this.serviceType = serviceType; }
 
-    public void setExperience(int experience){ this.experience = experience; }
+    public int getExperience() { return experience; }
+
+    public void setExperience(int experience) { this.experience = experience; }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
 }

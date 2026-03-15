@@ -25,7 +25,7 @@ public class AdminController {
     }
 
     @GetMapping("/approve/{id}")
-    public String approve(@PathVariable Long id){
+    public String approvePartner(@PathVariable Long id){
 
         adminService.approvePartner(id);
 
