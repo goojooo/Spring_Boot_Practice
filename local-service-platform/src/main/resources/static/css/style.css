@@ -1,14 +1,19 @@
 /* Global layout */
 
 body{
-font-family: "Segoe UI", sans-serif;
-background: linear-gradient(135deg,#4f46e5,#6366f1);
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#4b6cb7,#182848);
+color:black;
+text-align:center;
+}
+
+table{
+margin:auto;
+background:white;
+}
+
+h2{
+color:white;
 }
 
 /* Card */
