@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.localservice.model.Booking;
 import com.localservice.model.ServicePartner;
 import com.localservice.model.ServicePartnerRequest;
 import com.localservice.repository.BookingRepository;
@@ -82,8 +84,6 @@ public class ServicePartnerController {
 
     // Partner dashboard
 
-    
-
     @GetMapping("/dashboard")
     public String partnerDashboard(HttpSession session, Model model){
 
@@ -101,5 +101,30 @@ public class ServicePartnerController {
 
         return "partner-dashboard";
     } 
+    
+    @GetMapping("/booking/accept/{id}")
+    public String acceptBooking(@PathVariable Long id){
+
+        Booking booking = bookingRepository.findById(id).orElseThrow();
+
+        booking.setStatus("CONFIRMED");
+
+        bookingRepository.save(booking);
+
+        return "redirect:/partner/dashboard";
+    }
+
+
+    @GetMapping("/booking/reject/{id}")
+    public String rejectBooking(@PathVariable Long id){
+
+        Booking booking = bookingRepository.findById(id).orElseThrow();
+
+        booking.setStatus("REJECTED");
+
+        bookingRepository.save(booking);
+
+        return "redirect:/partner/dashboard";
+    }
 
 }

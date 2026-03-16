@@ -3,9 +3,13 @@ package com.localservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.localservice.model.Booking;
+import com.localservice.model.User;
 import com.localservice.repository.BookingRepository;
 import com.localservice.repository.ServicePartnerRepository;
 
@@ -47,7 +51,6 @@ public class ServiceController {
 
         return "booking-form";
     }
-
 
 
 

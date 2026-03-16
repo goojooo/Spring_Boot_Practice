@@ -7,14 +7,32 @@
 <th>Service</th>
 <th>Date</th>
 <th>Status</th>
+<th>Action</th>
 </tr>
 
 <tr th:each="booking : ${bookings}">
 
 <td th:text="${booking.customerName}"></td>
+
 <td th:text="${booking.serviceType}"></td>
+
 <td th:text="${booking.bookingDate}"></td>
+
 <td th:text="${booking.status}"></td>
+
+<td>
+
+<a th:href="@{/partner/booking/accept/{id}(id=${booking.id})}">
+Accept
+</a>
+
+|
+
+<a th:href="@{/partner/booking/reject/{id}(id=${booking.id})}">
+Reject
+</a>
+
+</td>
 
 </tr>
 

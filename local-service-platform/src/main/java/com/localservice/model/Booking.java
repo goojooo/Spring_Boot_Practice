@@ -18,6 +18,8 @@ public class Booking {
     private String status;
 
     private Long partnerId;
+    
+    private String userEmail;
 
     public Long getId() { return id; }
 
@@ -42,4 +44,12 @@ public class Booking {
     public Long getPartnerId() { return partnerId; }
 
     public void setPartnerId(Long partnerId) { this.partnerId = partnerId; }
+    
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
 }
