@@ -22,15 +22,18 @@
 
 <td>
 
-<a th:href="@{/partner/booking/accept/{id}(id=${booking.id})}">
-Accept
-</a>
+<span th:if="${booking.status == 'PENDING'}">
+<a th:href="@{/partner/booking/accept/{id}(id=${booking.id})}">Accept</a>
+<a th:href="@{/partner/booking/reject/{id}(id=${booking.id})}">Reject</a>
+</span>
 
-|
+<span th:if="${booking.status == 'CONFIRMED'}">
+<a th:href="@{/partner/booking/start/{id}(id=${booking.id})}">Start Work</a>
+</span>
 
-<a th:href="@{/partner/booking/reject/{id}(id=${booking.id})}">
-Reject
-</a>
+<span th:if="${booking.status == 'IN_PROGRESS'}">
+<a th:href="@{/partner/booking/complete/{id}(id=${booking.id})}">Complete</a>
+</span>
 
 </td>
 

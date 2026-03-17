@@ -114,7 +114,29 @@ public class ServicePartnerController {
         return "redirect:/partner/dashboard";
     }
 
+    @GetMapping("/booking/start/{id}")
+    public String startWork(@PathVariable Long id){
 
+        Booking booking = bookingRepository.findById(id).orElseThrow();
+        booking.setStatus("IN_PROGRESS");
+
+        bookingRepository.save(booking);
+
+        return "redirect:/partner/dashboard";
+    }
+
+
+    @GetMapping("/booking/complete/{id}")
+    public String completeWork(@PathVariable Long id){
+
+        Booking booking = bookingRepository.findById(id).orElseThrow();
+        booking.setStatus("COMPLETED");
+
+        bookingRepository.save(booking);
+
+        return "redirect:/partner/dashboard";
+    }
+    
     @GetMapping("/booking/reject/{id}")
     public String rejectBooking(@PathVariable Long id){
 

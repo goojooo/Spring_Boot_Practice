@@ -20,6 +20,9 @@ public class Booking {
     private Long partnerId;
     
     private String userEmail;
+    
+    private String timeSlot;
+    
 
     public Long getId() { return id; }
 
@@ -52,4 +55,13 @@ public class Booking {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+
+	public String getTimeSlot() {
+		return timeSlot;
+	}
+
+	public void setTimeSlot(String timeSlot) {
+		this.timeSlot = timeSlot;
+	}
+    
 }

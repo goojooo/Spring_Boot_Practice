@@ -17,6 +17,7 @@
 <th>Service</th>
 <th>Date</th>
 <th>Status</th>
+<th>Time</th>
 </tr>
 
 <tr th:each="booking : ${bookings}">
@@ -27,6 +28,17 @@
 
 <td th:text="${booking.status}"></td>
 
+<td th:text="${booking.timeSlot}"></td>
+
+<td>
+
+<span th:if="${booking.status == 'COMPLETED'}">
+<a th:href="@{/review/{id}(id=${booking.partnerId})}">
+Give Review
+</a>
+</span>
+
+</td>
 </tr>
 </table>
 <!--  
