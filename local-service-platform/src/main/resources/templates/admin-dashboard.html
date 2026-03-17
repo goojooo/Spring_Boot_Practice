@@ -1,8 +1,25 @@
-<div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
 
-<h2>Pending Partner Requests</h2>
+<body>
 
-<table border="1">
+<div class="dashboard">
+
+<div class="sidebar">
+<h2>Admin Panel</h2>
+<a href="#">Requests</a>
+<a href="/">Logout</a>
+</div>
+
+<div class="main-content">
+
+<h1>Partner Requests</h1>
+
+<table>
 
 <tr>
 <th>Name</th>
@@ -18,15 +35,8 @@
 <td th:text="${req.experience}"></td>
 
 <td>
-
-<a th:href="@{/admin/approve/{id}(id=${req.id})}" class="btn">
-Approve
-</a>
-
-<a th:href="@{/admin/reject/{id}(id=${req.id})}" class="btn">
-Reject
-</a>
-
+<a th:href="@{/admin/approve/{id}(id=${req.id})}" class="btn-primary">Approve</a>
+<a th:href="@{/admin/reject/{id}(id=${req.id})}" class="btn-secondary" style="background:#ef4444;">Reject</a>
 </td>
 
 </tr>
@@ -34,3 +44,8 @@ Reject
 </table>
 
 </div>
+
+</div>
+
+</body>
+</html>

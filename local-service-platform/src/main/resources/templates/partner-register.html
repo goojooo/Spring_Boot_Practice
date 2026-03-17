@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Service Partner Registration</title>
+<title>Partner Register</title>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-<h2>Register as Service Partner</h2>
+<div class="form-container">
+
+<h2>Become a Partner 💼</h2>
+<p class="form-subtext">Start earning with your skills</p>
 
 <form action="/partner/register" method="post">
 
-Name:
-<input type="text" name="name"><br><br>
+<div class="form-row">
 
-Email:
-<input type="email" name="email"><br><br>
+<div class="form-group">
+<label>Name</label>
+<input type="text" name="name">
+</div>
 
-Phone:
-<input type="text" name="phone"><br><br>
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email">
+</div>
 
-Service Type:
-<input type="text" name="serviceType"><br><br>
+</div>
 
-Experience (years):
-<input type="number" name="experience"><br><br>
+<div class="form-row">
 
-<button type="submit">Submit Request</button>
+<div class="form-group">
+<label>Phone</label>
+<input type="text" name="phone">
+</div>
+
+<div class="form-group">
+<label>Experience</label>
+<input type="number" name="experience">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>Service Type</label>
+<input type="text" name="serviceType">
+</div>
+
+<button class="btn-primary full-btn">Submit Request</button>
 
 </form>
+
+</div>
 
 </body>
 </html>

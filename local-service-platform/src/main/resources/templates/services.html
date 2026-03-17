@@ -7,31 +7,40 @@
 
 <body>
 
-<h1>Available Service Providers</h1>
+<nav class="navbar">
+  <h2>LocalServices</h2>
+  <div>
+    <a href="/">Home</a>
+    <a href="/my-bookings">My Bookings</a>
+  </div>
+</nav>
 
-<div th:each="service : ${services}" class="service-card">
+<section class="page">
+
+<h1 class="page-title">Available Services</h1>
+
+<div class="service-grid">
+
+<div class="service-card" th:each="service : ${services}">
 
 <h3 th:text="${service.serviceType}"></h3>
 
-<p>
-Provider:
-<span th:text="${service.name}"></span>
-</p>
+<p><strong>Provider:</strong> <span th:text="${service.name}"></span></p>
 
-<p>
-Experience:
-<span th:text="${service.experience}"></span> years
-</p>
+<p><strong>Experience:</strong> 
+<span th:text="${service.experience}"></span> years</p>
 
-<a th:href="@{/booking/form/{partnerId}(partnerId=${service.id})}">
-Book Service
+<div class="card-actions">
+<a th:href="@{/booking/form/{partnerId}(partnerId=${service.id})}" class="btn-primary">
+Book Now
 </a>
-<a href="/my-bookings">My Bookings</a>
 </div>
 
 </div>
 
 </div>
+
+</section>
 
 </body>
 </html>

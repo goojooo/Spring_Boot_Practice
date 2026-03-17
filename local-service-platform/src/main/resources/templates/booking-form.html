@@ -1,22 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Book Service</h2>
+
 <form action="/booking/create" method="post">
 
 <input type="hidden" name="partnerId" th:value="${booking.partnerId}">
 
+<div class="form-group">
 <label>Your Name</label>
 <input type="text" name="customerName">
+</div>
 
+<div class="form-group">
 <label>Date</label>
 <input type="date" name="bookingDate">
+</div>
 
-<label>Select Time Slot</label>
-
-<select name="timeSlot" required>
-<option value="">--Select--</option>
-<option value="9AM-11AM">9 AM - 11 AM</option>
-<option value="11AM-1PM">11 AM - 1 PM</option>
-<option value="2PM-4PM">2 PM - 4 PM</option>
-<option value="4PM-6PM">4 PM - 6 PM</option>
+<div class="form-group">
+<label>Time Slot</label>
+<select name="timeSlot">
+<option>9AM - 11AM</option>
+<option>11AM - 1PM</option>
+<option>2PM - 4PM</option>
+<option>4PM - 6PM</option>
 </select>
-<button class="btn-primary">Book Service</button>
+</div>
+
+<button class="btn-primary full-btn">Confirm Booking</button>
 
 </form>
+
+</div>
+
+</body>
+</html>

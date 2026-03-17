@@ -1,23 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
 <div class="dashboard">
 
+<!-- SIDEBAR -->
 <div class="sidebar">
+<h2>User Panel</h2>
 
-<h3>User Panel</h3>
-
-<ul>
-<li><a href="/services">Browse Services</a></li>
+<a href="/services">Browse Services</a>
 <a href="/my-bookings">My Bookings</a>
-<li><a href="/">Logout</a></li>
-</ul>
+<a href="/">Logout</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+<h1>Dashboard</h1>
+
+<div class="dashboard-cards">
+
+<div class="dash-card">
+<h3>Browse Services</h3>
+<p>Find and book services</p>
+<a href="/services" class="btn-primary">Explore</a>
+</div>
+
+<div class="dash-card">
+<h3>My Bookings</h3>
+<p>Track your bookings</p>
+<a href="/my-bookings" class="btn-secondary">View</a>
+</div>
 
 </div>
 
-<div class="main">
-
-<h2>Welcome to your dashboard</h2>
-
-<p>You can book services from here.</p>
-
 </div>
 
 </div>
+
+</body>
+</html>

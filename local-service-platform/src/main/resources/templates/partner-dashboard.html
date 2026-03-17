@@ -1,6 +1,25 @@
-<h2>Booking Requests</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Partner Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
 
-<table border="1">
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+<h2>Partner Panel</h2>
+<a href="#">Bookings</a>
+<a href="/">Logout</a>
+</div>
+
+<div class="main-content">
+
+<h1>Booking Requests</h1>
+
+<table>
 
 <tr>
 <th>Customer</th>
@@ -13,26 +32,23 @@
 <tr th:each="booking : ${bookings}">
 
 <td th:text="${booking.customerName}"></td>
-
 <td th:text="${booking.serviceType}"></td>
-
 <td th:text="${booking.bookingDate}"></td>
-
 <td th:text="${booking.status}"></td>
 
 <td>
 
 <span th:if="${booking.status == 'PENDING'}">
-<a th:href="@{/partner/booking/accept/{id}(id=${booking.id})}">Accept</a>
-<a th:href="@{/partner/booking/reject/{id}(id=${booking.id})}">Reject</a>
+<a th:href="@{/partner/booking/accept/{id}(id=${booking.id})}" class="btn-primary">Accept</a>
+<a th:href="@{/partner/booking/reject/{id}(id=${booking.id})}" class="btn-secondary" style="background:#ef4444;">Reject</a>
 </span>
 
 <span th:if="${booking.status == 'CONFIRMED'}">
-<a th:href="@{/partner/booking/start/{id}(id=${booking.id})}">Start Work</a>
+<a th:href="@{/partner/booking/start/{id}(id=${booking.id})}" class="btn-primary">Start</a>
 </span>
 
 <span th:if="${booking.status == 'IN_PROGRESS'}">
-<a th:href="@{/partner/booking/complete/{id}(id=${booking.id})}">Complete</a>
+<a th:href="@{/partner/booking/complete/{id}(id=${booking.id})}" class="btn-primary">Complete</a>
 </span>
 
 </td>
@@ -40,3 +56,10 @@
 </tr>
 
 </table>
+
+</div>
+
+</div>
+
+</body>
+</html>
