@@ -54,6 +54,11 @@
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>Annotation_Configuration_Properties</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

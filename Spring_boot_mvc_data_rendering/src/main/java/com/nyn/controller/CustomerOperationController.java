@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CustomerOperationController {
 
 	// Handler Method
-	@RequestMapping("/")
+	@RequestMapping("/forward")
 	public String showControllerMethod(BindingAwareModelMap map) {
 
 		System.out.println("CustomerOperationController.showControllerMethod()");
@@ -21,5 +21,17 @@ public class CustomerOperationController {
 		// return Logical View Name
 		return "welcome";
 	}
+	
+	@RequestMapping("/report")
+	public String showReport() {
+		
+		System.out.println("CustomerOperationController.showReport()");
+	
+
+		// return Logical View Name
+		return "report";
+	}
+	
+	
 
 }
