@@ -1,56 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Partner Register</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Partner Registration</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
 
-<div class="form-container">
-
-<h2>Become a Partner 💼</h2>
-<p class="form-subtext">Start earning with your skills</p>
-
-<form action="/partner/register" method="post">
-
-<div class="form-row">
-
-<div class="form-group">
-<label>Name</label>
-<input type="text" name="name">
-</div>
-
-<div class="form-group">
-<label>Email</label>
-<input type="email" name="email">
-</div>
-
-</div>
-
-<div class="form-row">
-
-<div class="form-group">
-<label>Phone</label>
-<input type="text" name="phone">
-</div>
-
-<div class="form-group">
-<label>Experience</label>
-<input type="number" name="experience">
-</div>
-
-</div>
-
-<div class="form-group">
-<label>Service Type</label>
-<input type="text" name="serviceType">
-</div>
-
-<button class="btn-primary full-btn">Submit Request</button>
-
-</form>
-
+<div class="auth-card">
+  <h2>Register as Service Partner</h2>
+  <form action="/partner/register" method="post">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label>Service Type</label>
+      <input type="text" name="serviceType" required>
+    </div>
+    <div class="form-group">
+      <label>Experience (years)</label>
+      <input type="number" name="experience" required>
+    </div>
+    <button class="btn-primary full-btn">Submit Request</button>
+  </form>
 </div>
 
 </body>

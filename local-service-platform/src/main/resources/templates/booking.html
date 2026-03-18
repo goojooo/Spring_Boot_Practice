@@ -1,25 +1,32 @@
-<div class="auth-card">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Service</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
-<h2>Book Service</h2>
-
-<form action="/booking/create" method="post">
-
-<div class="form-group">
-<input type="text" name="customerName" placeholder="Your Name">
+<div class="form-container">
+  <h2>Book Service</h2>
+  <form action="/booking/create" method="post">
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" name="customerName" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label>Service Type</label>
+      <input type="text" name="serviceType" required>
+    </div>
+    <div class="form-group">
+      <label>Booking Date</label>
+      <input type="date" name="bookingDate" required>
+    </div>
+    <input type="hidden" name="partnerId" th:value="${partner.id}">
+    <button class="btn-primary full-btn">Book Service</button>
+  </form>
 </div>
 
-<div class="form-group">
-<input type="text" name="serviceType" placeholder="Service Type">
-</div>
-
-<div class="form-group">
-<input type="date" name="bookingDate">
-</div>
-
-<input type="hidden" name="partnerId" th:value="${partner.id}">
-
-<button class="btn-primary">Book Service</button>
-
-</form>
-
-</div>
+</body>
+</html>

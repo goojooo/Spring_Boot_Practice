@@ -1,50 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
 
-<div class="dashboard">
-
-<div class="sidebar">
-<h2>Admin Panel</h2>
-<a href="#">Requests</a>
-<a href="/">Logout</a>
-</div>
-
-<div class="main-content">
-
-<h1>Partner Requests</h1>
-
-<table>
-
-<tr>
-<th>Name</th>
-<th>Service</th>
-<th>Experience</th>
-<th>Action</th>
-</tr>
-
-<tr th:each="req : ${requests}">
-
-<td th:text="${req.name}"></td>
-<td th:text="${req.serviceType}"></td>
-<td th:text="${req.experience}"></td>
-
-<td>
-<a th:href="@{/admin/approve/{id}(id=${req.id})}" class="btn-primary">Approve</a>
-<a th:href="@{/admin/reject/{id}(id=${req.id})}" class="btn-secondary" style="background:#ef4444;">Reject</a>
-</td>
-
-</tr>
-
-</table>
-
-</div>
-
+<div class="container">
+  <h2>Pending Partner Requests</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Service</th>
+      <th>Experience</th>
+      <th>Action</th>
+    </tr>
+    <tr th:each="req : ${requests}">
+      <td th:text="${req.name}"></td>
+      <td th:text="${req.serviceType}"></td>
+      <td th:text="${req.experience}"></td>
+      <td>
+        <a th:href="@{/admin/approve/{id}(id=${req.id})}" class="btn btn-primary">Approve</a>
+        <a th:href="@{/admin/reject/{id}(id=${req.id})}" class="btn btn-secondary">Reject</a>
+      </td>
+    </tr>
+  </table>
 </div>
 
 </body>

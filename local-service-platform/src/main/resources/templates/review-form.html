@@ -6,36 +6,26 @@
 </head>
 
 <body>
-
-<div class="form-container">
-
-<h2>Give Review ⭐</h2>
-
-<form action="/review/save" method="post">
-
-<input type="hidden" name="partnerId" th:value="${review.partnerId}">
-
-<div class="form-group">
-<label>Rating</label>
-<select name="rating">
-<option value="5">⭐⭐⭐⭐⭐</option>
-<option value="4">⭐⭐⭐⭐</option>
-<option value="3">⭐⭐⭐</option>
-<option value="2">⭐⭐</option>
-<option value="1">⭐</option>
-</select>
+	<div class="form-container">
+  <h2>Give Review</h2>
+  <form action="/review/save" method="post">
+    <input type="hidden" name="partnerId" th:value="${review.partnerId}"/>
+    <div class="form-group">
+      <label>Rating</label>
+      <select name="rating">
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Comment</label>
+      <textarea name="comment" rows="4"></textarea>
+    </div>
+    <button class="btn-primary full-btn">Submit</button>
+  </form>
 </div>
-
-<div class="form-group">
-<label>Comment</label>
-<textarea name="comment"></textarea>
-</div>
-
-<button class="btn-primary full-btn">Submit</button>
-
-</form>
-
-</div>
-
 </body>
 </html>
