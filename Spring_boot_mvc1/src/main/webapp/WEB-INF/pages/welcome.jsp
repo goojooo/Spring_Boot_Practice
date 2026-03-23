@@ -11,6 +11,10 @@
 <body>
 
 <h1>Welcome to Spring Boot MKC</h1>
+<a href="/report">SHow report2</a>
 
+<form action="report" method="get">
+	<input type = "submit" value="send" />
+</form>
 </body>
 </html>
