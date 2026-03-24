@@ -3,26 +3,26 @@ package com.model;
 public class Student {
 
 	private int id;
-	private int name;
-	private int email;
+	private String name;
+	private String email;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	
 }
