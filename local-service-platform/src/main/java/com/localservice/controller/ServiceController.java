@@ -1,21 +1,21 @@
 package com.localservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.localservice.model.Booking;
-import com.localservice.model.User;
+import com.localservice.model.ServicePartner;
 import com.localservice.repository.BookingRepository;
 import com.localservice.repository.ServicePartnerRepository;
 
-import jakarta.servlet.http.HttpSession;
-
-@Controller
+@RestController
+@RequestMapping("/api")
 public class ServiceController {
 
     @Autowired
@@ -28,15 +28,8 @@ public class ServiceController {
 
     // Show services page
     @GetMapping("/services")
-    public String services(Model model, HttpSession session){
-
-        if(session.getAttribute("loggedUser") == null){
-            return "redirect:/login";
-        }
-
-        model.addAttribute("services", servicePartnerRepository.findAll());
-
-        return "services";
+    public List<ServicePartner> getServices() {
+        return servicePartnerRepository.findAll();
     }
 
 

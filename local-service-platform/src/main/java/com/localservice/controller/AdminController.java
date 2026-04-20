@@ -7,8 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+//@RestController
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/api/admin")
 public class AdminController {
 
     @Autowired
@@ -17,6 +18,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @GetMapping("/test")
+    public String adminTest() {
+        return "Admin Access Granted";
+    }
+    
     @GetMapping("/dashboard")
     public String dashboard(Model model){
 

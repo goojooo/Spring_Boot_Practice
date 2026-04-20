@@ -58,6 +58,6 @@ public class AuthController {
 
 		session.invalidate();
 
-		return "redirect:/login";
+		return "forward:/index.html";
 	}
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Counter from './components/Counter';
 import { 
   Menu, X, MapPin, Star, ShieldCheck, Clock, MessageSquare, 
   Wrench, Zap, Sparkles, MonitorSmartphone, Paintbrush, Home, 
@@ -353,18 +354,28 @@ export default function App() {
       <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center divide-y md:divide-y-0 md:divide-x divide-gray-700">
+            
             <div className="p-4">
-              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">10k+</div>
+              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                <Counter target={1432} suffix="+" />
+              </div>
               <p className="text-gray-300 font-medium">Services Completed</p>
             </div>
+
             <div className="p-4 pt-10 md:pt-4">
-              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-400">5k+</div>
+              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-400">
+                <Counter target={768} suffix="+" />
+              </div>
               <p className="text-gray-300 font-medium">Verified Professionals</p>
             </div>
+
             <div className="p-4 pt-10 md:pt-4">
-              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-400">4.8</div>
+              <div className="text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-400">
+                <Counter target={4.8} />
+              </div>
               <p className="text-gray-300 font-medium">Average Star Rating</p>
             </div>
+
           </div>
 
           {/* Mini Testimonial */}
